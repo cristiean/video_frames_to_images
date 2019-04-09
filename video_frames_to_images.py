@@ -1,4 +1,7 @@
-import cv2, os, re, sys
+import cv2
+import os
+import re
+import sys
 
 
 # Save every n^th frame of a video as a JPEG
@@ -27,6 +30,7 @@ def save_frames_as_jpeg(video_name, video_path, frame_step = 1):
 		frame += 1
 
 		show_progress(frame, total_frames, status = f'frame {frame}/{total_frames} from {video_path}')
+
 
 # Display progress bar
 def show_progress(count, total, status=''):
