@@ -1,5 +1,9 @@
 # Save video frames as images
 
+## Requirements
+- OpenCV. You can install it by running `$ pip install opencv-python`
+
+## Run from terminal
 - Copy videos to a folder `videos/`
 - You should end up with something like this:
   ```
