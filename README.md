@@ -15,4 +15,4 @@
   \_README.md
   ```
 - Run `python3 video_frames_to_images.py` to process the videos. This will output all frames as .jpg in a new folder `images/`
-- **Frame step**- an integer argument ***n*** that will only save every ***n***-th frame. For example `python3 video_frames_to_images.py 30` will only save every 30th frame of the video.
+- **Frame step**- an integer argument ***n*** that will only save every ***n***-th frame. For example, running `python3 video_frames_to_images.py 30` will save every 30th frame of the video.
