@@ -3,7 +3,7 @@
 ## Requirements
 - OpenCV. You can install it by running `$ pip install opencv-python`
 - Copy videos to a folder `videos/`
-  - You should end up with something like this:
+  - You should end up with a folder structure similar to this:
     ```
     \_video_frames_to_images.py
     \_videos
