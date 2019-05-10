@@ -1,15 +1,12 @@
-import cv2
-import os
-import re
-import sys
+import cv2, os, re, sys
 
 
-# Save every n^th frame of a video as a JPEG
+# Save every n_th frame of a video as a JPEG
 def save_frames_as_jpeg(video_name, video_path, frame_step = 1):
 	capture = cv2.VideoCapture(video_path)
 
-	file_name = re.sub(r'\..*', '', video_path)	 # Get rid of extension
-	file_name = re.sub(r'(.*\/)*', '', file_name)  # Get rid of directories
+	file_name = re.sub(r'\..*', '', video_path)	# Get rid of extension
+	file_name = re.sub(r'(.*\/)*', '', file_name)   # Get rid of directories
 
 	# Make images dir
 	try:
@@ -19,16 +16,15 @@ def save_frames_as_jpeg(video_name, video_path, frame_step = 1):
 
 	total_frames = int(capture.get(cv2.CAP_PROP_FRAME_COUNT))
 
-	# Iterate through frames and save each 'frame_step'-th frame
+	# Iterate through frames and save each 'frame_step'^th frame
 	frame = 0
 	success, image = capture.read()
 	while success:
-		if frame % frame_step == 0:
-			cv2.imwrite(f"images/{file_name}/frame_{frame}.jpg", image)  # save frame as JPEG file
-
+		if frame % frame_step is 0:
+			cv2.imwrite(f"images/{file_name}/frame_{frame}.jpg", image)  # save frame as JPG file
 		success,image = capture.read()
-		frame += 1
 
+		frame += 1
 		show_progress(frame, total_frames, status = f'frame {frame}/{total_frames} from {video_path}')
 
 
@@ -40,7 +36,6 @@ def show_progress(count, total, status=''):
     percents = round(100.0 * count / float(total), 1)
     bar = '=' * filled_len + '-' * (bar_len - filled_len)
 
-	#sys.stdout.write('[%s] %s%s ...%s\r' % (bar, percents, '%', status))
     sys.stdout.write(f'[{bar}] {percents}% --- {status}\r')
     sys.stdout.flush()  
 
