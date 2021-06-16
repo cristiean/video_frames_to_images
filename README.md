@@ -2,19 +2,20 @@
 
 ## Requirements
 - OpenCV. You can install it by running `$ pip install opencv-python`
-- Copy videos to a folder `videos/`
+- Copy videos to a folder called `videos/`
   - You should end up with a folder structure similar to this:
     ```
-    \_video_frames_to_images.py
-    \_videos
-      \_video1.mp4
-      \_video2.mp4
-      \_video3.mov
-    \_README.md
+.
+├── README.md
+├── requirements.txt
+├── video_frames_to_images.py
+└── videos
+    ├── video1.mp4
+    ├── video2.mp4
+    └── video3.mp4
     ```
 ## Run from terminal
-- Run `$ python3 video_frames_to_images.py` to process the videos. This will output all frames as .jpg in a new folder `images/`
+`$ python3 video_frames_to_images.py` will output all frames as .jpg in a new folder `images/`
 
 ## Arguments
-- **Frame step**- an integer argument ***n*** that will only save every ***n***-th frame.
-  - For example, running `$ python3 video_frames_to_images.py 30` will save every 30th frame of the video.
+- **Frame step**- an integer argument **n** that will only save every **n**-th frame. For example, running `$ python3 video_frames_to_images.py 30` will save every 30th frame of the video.
